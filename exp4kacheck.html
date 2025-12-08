@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Registration Form</title>
+<style>
+  body{font-family:Arial;margin:40px}
+  .container{width:350px;padding:20px;border:1px solid #ccc;border-radius:8px}
+  input,button{width:100%;padding:8px;margin:10px 0;border-radius:5px;border:1px solid #aaa}
+  #error-msg{color:red;font-size:14px}
+  #success-msg{color:green;font-size:14px;font-weight:bold}
+  button{background:blue;color:#fff;border:none;cursor:pointer}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h2>User Registration</h2>
+
+<div id="error-msg"></div>
+<div id="success-msg"></div>
+
+<form id="regForm">
+  <input id="username" placeholder="Enter Username">
+  <input id="email" placeholder="Enter Email">
+  <input type="password" id="password" placeholder="Enter Password">
+  <input type="password" id="confirmPassword" placeholder="Confirm Password">
+  <button>Register</button>
+</form>
+</div>
+
+<script>
+regForm.addEventListener("submit", e=>{
+  e.preventDefault();
+
+  let u=username.value.trim(), mail=email.value.trim(),
+  p=password.value, cp=confirmPassword.value,
+  err=document.getElementById("error-msg"),
+  suc=document.getElementById("success-msg");
+
+  err.innerHTML=suc.innerHTML="";
+
+  if(!u||!mail||!p||!cp) return err.innerHTML="All fields are required.";
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) return err.innerHTML="Invalid Email!";
+  if(!/^(?=.*[0-9])(?=.*[!@#$%^&*]).{6,}$/.test(p)) 
+    return err.innerHTML="Weak Password: Min 6 chars, 1 number & 1 special char!";
+  if(p!==cp) return err.innerHTML="Passwords do not match!";
+
+  suc.innerHTML="🎉 Registration Successful!";
+  regForm.reset();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Gallery</title>
+<style>
+.gallery { display: flex; gap: 10px; }
+.thumbnail { width: 100px; cursor: pointer; }
+#largeImage { width: 400px; margin-top: 20px; border: 2px solid black; }
+</style>
+</head>
+<body>
+<div class="gallery">
+    <img src="/imgs/imgg1.webp" class="thumbnail" alt="Pic 1">
+    <img src="/imgs/imgg2.jpg" class="thumbnail" alt="Pic 2">
+    <img src="/imgs/imgg3.png" class="thumbnail" alt="Pic 3">
+</div>
+<div class="preview">
+    <img id="largeImage" src="/imgs/imgg4.jpeg" alt="Large View">
+</div>
+
+<script>
+const thumbnails = document.querySelectorAll('.thumbnail');
+const largeImage = document.getElementById('largeImage');
+
+thumbnails.forEach(img => {
+    img.addEventListener('click', () => {
+        largeImage.src = img.src; // <-- FIXED
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temp Converter</title>
+<style>
+body{text-align:center;font-family:Arial;background:#eee;margin-top:70px}
+.box{background:#fff;width:260px;margin:auto;padding:20px;border-radius:10px;box-shadow:0 0 10px #088}
+input{width:80%;padding:8px;font-size:16px}
+</style>
+</head>
+<body>
+<div class="box">
+<h3>Temperature Converter</h3>
+<input type="number" id="c" placeholder="Enter °C" oninput="t()">
+<p>Fahrenheit: <span id="f">0</span></p>
+</div>
+
+<script>
+function t(){
+let c=document.getElementById("c").value;
+document.getElementById("f").innerHTML=(c*9/5)+32;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Animation Button</title>
+
+<style>
+  body{
+    font-family: Arial;
+    text-align:center;
+    margin-top:60px;
+  }
+
+  /* Basic button style */
+  .anim-btn{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:#3498db;   /* blue */
+    color:white;
+    cursor:pointer;
+
+    /* Smooth transition */
+    transition:0.3s ease;
+  }
+
+  /* Hover animation */
+  .anim-btn:hover{
+    background:#1abc9c;   /* green */
+    transform:scale(1.1); /* increase size */
+  }
+
+  /* Click animation (active state) */
+  .anim-btn:active{
+    background:#e74c3c;   /* red */
+    transform:scale(0.9); /* shrink slightly */
+  }
+</style>
+
+</head>
+<body>
+
+<h2>CSS Animation Button</h2>
+
+<button class="anim-btn">Click Me</button>
+
+</body>
+</html>

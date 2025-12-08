@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Authentication</title>
+
+<style>
+  body{
+    font-family: Arial;
+    margin: 40px;
+  }
+  .box{
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+  }
+  input, button{
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+  }
+  #msg{
+    color: red;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+<h2>User Login</h2>
+
+<div class="box">
+  <input type="text" id="user" placeholder="Enter Username">
+  <input type="password" id="pass" placeholder="Enter Password">
+  <button onclick="login()">Login</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+  function login(){
+
+    // Expected username & password
+    let correctUser = "rahil";
+    let correctPass = "12345";
+
+    // Input values
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    // Check login
+    if(u === correctUser && p === correctPass){
+      document.getElementById("msg").style.color = "green";
+      document.getElementById("msg").innerHTML = 
+        "Welcome, " + u + "!";
+    }
+    else{
+      document.getElementById("msg").style.color = "red";
+      document.getElementById("msg").innerHTML = 
+        "Invalid username or password!";
+    }
+  }
+</script>
+
+</body>
+</html>
