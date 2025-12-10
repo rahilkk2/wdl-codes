@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blog</title>
+<style>
+body{font-family:Arial;margin:0;padding:20px;background:#eee}
+header{display:flex;justify-content:space-between;align-items:center;background:#333;color:#fff;padding:15px;border-radius:8px}
+.blog{display:grid;gap:20px;margin-top:20px;grid-template-columns:repeat(3,1fr)}
+.post{background:#fff;padding:15px;border-radius:8px;box-shadow:0 2px 5px #0002}
+@media(max-width:900px){.blog{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){header{flex-direction:column;text-align:center}.blog{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+    <h2>My Blog</h2><nav>Home | About | Contact</nav>
+</header>
+<div class="blog">
+    <div class="post"><h3>Post 1</h3><p>Content here...</p></div>
+    <div class="post"><h3>Post 2</h3><p>Content here...</p></div>
+    <div class="post"><h3>Post 3</h3><p>Content here...</p></div>
+</div>
+</body>
+</html>
